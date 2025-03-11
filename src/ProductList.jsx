@@ -309,19 +309,18 @@ function ProductList({ onHomeClick }) {
                 <div className="product-grid">
                     {plantsArray.map((category, index) => (
                     <div key={index}>
-                        <h1><div>{category.category}</div></h1>
+                        <h1 className='product-category'><div>{category.category}</div></h1>
                         <div className="product-list">
                             {category.plants.map((plant, plantIndex) => (
                             <div className="product-card" key={plantIndex}>
                                 <div className="product-title">{plant.name}</div>
                                 <img className="product-image" src={plant.image} alt={plant.name} />
-                                        {/*Similarly like the above plant.name show other details like description and cost*/}
-                                        <div className="product-price">{plant.cost}</div>
-                                        <div className="product-description">{plant.description}</div>
-                                        {addedToCart[plant.name] ? (<button className="product-button added-to-cart" disabled>Added to Cart</button>
-                                        ) : (
-                                            <button className="product-button" onClick={() => handleAddToCart(plant)}>Add to Cart</button>
-                                        )}
+                                <div className="product-price">{plant.cost}</div>
+                                <div className="product-description">{plant.description}</div>
+                                {addedToCart[plant.name] ? (<button className="product-button added-to-cart" disabled>Added to Cart</button>
+                                ) : (
+                                    <button className="product-button" onClick={() => handleAddToCart(plant)}>Add to Cart</button>
+                                )}
                             </div>
                             ))}
                         </div>
